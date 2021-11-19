@@ -483,11 +483,11 @@ module.exports = welcome = async (ikyy, anu) => {
 			    mem = anu.participants[0]
 			    console.log(anu)
    
-            try {
-               pp_user = await nino.getProfilePicture(mem)
-                } catch (e) {
-                pp_user = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
-            }
+          
+         
+                
+           pp_user = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+            
             
            var pp_grup = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
             
