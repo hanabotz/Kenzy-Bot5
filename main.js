@@ -236,7 +236,7 @@ teks = `https://chat.whatsapp.com/Hnb8UOsuN4t5hSEMNTUdft`
 
 
 // send message 
-/**ikyy.sendMessage(`6289636634511@s.whatsapp.net`, `*Bot On Mek, Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(ikyy.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Owner RIFQI BOTZ",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./connect.jpg'),sourceUrl:"https://wa.me/6289636634511?text=Assalamualaikum"}}})
+ikyy.sendMessage(`6289636634511@s.whatsapp.net`, `*Bot On Mek, Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(ikyy.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Owner RIFQI BOTZ",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./connect.jpg'),sourceUrl:"https://wa.me/6289636634511?text=Assalamualaikum"}}})
 
 console.log(color('|INFO!|', 'yellow'), color('mengirim info bot ke owner', 'cyan'))
 
@@ -248,7 +248,7 @@ fetch(`http://ip-api.com/line`).then(res => res.text())
 
      console.log(color('|INFO!|', 'yellow'), color('mengirim info bot ke owner', 'cyan'))
 
-   })**/
+   })
 
 
 	// session
@@ -280,46 +280,6 @@ fetch(`http://ip-api.com/line`).then(res => res.text())
         /*=======================================================*/
 
 				
-				if (hour_now >= '02:00' && hour_now <= '04:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Waktunya sahur kak, Main botnya buat nanti lagi, Sebelum makan jangan lupa baca Doa ya kak', 'yellow'), color('(😊)', 'white'))
-          }
-        if (hour_now >= '04:00' && hour_now <= '05:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Bentar lagi jam 5 nih kak, Jangan lupa sholat subuh ya kak', 'yellow'), color('(😊)', 'white'))
-          }
-          if (hour_now >= '05:00' && hour_now <= '06:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Udah sholat Subuh belum kak', 'yellow'), color('(🙄)', 'white'))
-          }
-        if (hour_now >= '06:00' && hour_now <= '11:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Pagi kak, Jangan lupa mandi', 'yellow'), color('(😅)', 'white'))
-          }
-          if (hour_now >= '11:00' && hour_now <= '12:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Siang kak, Dah mandi blm kak?', 'yellow'), color('(🙄)', 'white'))
-          }
-          if (hour_now >= '12:00' && hour_now <= '14:00') {
-           console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Dah jam 12 kak, Jangan lupa sholat Dzuhur ya kak', 'yellow'), color('(😊)', 'white'))
-           }
-        if (hour_now >= '14:00' && hour_now <= '15:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Sore kak, Jangan lupa mandi', 'yellow'), color('(😅)', 'white'))
-          }
-        if (hour_now >= '15:00' && hour_now <= '16:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Dah jam 3 kak, Jangan lupa sholat Ashar ya kak', 'yellow'), color('(😊)', 'white'))
-          }
-        if (hour_now >= '17:00' && hour_now <= '18:00') {
-          console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Bentar lagi maghrib kak, Sabar ya kak', 'yellow'), color('(😆)', 'white'))
-          }
-        if (hour_now >= '18:00' && hour_now <= '19:00') {
-        	console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Alhamdulillah, Dah adzan kak, Puasanya dibatalin dulu kak, Sebelum makan jangan lupa baca doa kak, Setelah makan langsung sholat Maghrib ya kak', 'yellow'), color('(😊)', 'white'))
-        }
-        if (hour_now >= '19:00' && hour_now <= '20:00') {
-           console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Bentar lagi jam 8 kak, Yok kak main botnya buat nanti lagi, Sekarang siap-siap dulu buat Sholat Tarawih', 'yellow'), color('(😊)', 'white'))
-           }
-        if (hour_now >= '20:00' && hour_now <= '00:00') {
-           console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('Selamat malam kak, Jangan begadang ya kak, Tar sakit loh', 'yellow'), color('(😄)', 'white'))
-        }
-          if (hour_now >= '00:00' && hour_now <= '02:00') {
-           console.log(color('[PESAN DARI ORANG BAIK]', 'cyan'), color('KenzyBot ngantuk kak, tidur dulu ya kak', 'yellow'), color('(😴)', 'white'))
-        }
-        
 	// Baterai
 
 
@@ -434,7 +394,7 @@ ikyy.on('CB:action,,call', async json => {
 
 
 
-/**antidel = false
+antidel = true
 ikyy.on('message-delete', async (m) => {
 if (m.key.remoteJid == 'status@broadcast') return
 if (!m.key.fromMe && m.key.fromMe) return
@@ -460,7 +420,7 @@ ikyy.sendMessage(m.key.remoteJid, `\`\`\` A N T I  D E L E T E \`\`\`
 ˊ Type : ${type}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
 
 ikyy.copyNForward(m.key.remoteJid, m.message)
-})**/
+})
 
 
   
