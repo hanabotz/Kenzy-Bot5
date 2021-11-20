@@ -19,9 +19,17 @@ module.exports = welcome = async (ikyy, anu) => {
 			    console.log(anu)
    
             
-           var pp_user = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'   
-           var pp_grup = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
-            
+           try {
+                pp_user = await ikyy.getProfilePicture(mem)
+                } catch (e) {
+                pp_user = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+            }
+                try {
+                pp_grup = await ikyy.getProfilePicture(anu.jid)
+                } catch (e) {
+                pp_grup = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+            }
+			
             if (anu.action == 'add' && mem.includes(ikyy.user.jid)) {
             ikyy.sendMessage(anu.jid, 'Halo! Terima Kasih sudah Mengundangku, Jika ingin Menggunakan Bot Ketik !menu', 'conversation')
             }
