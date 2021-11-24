@@ -1,24 +1,33 @@
-FROM node:16.13.0
+FROM nikolaik/python-nodejs:latest
 
 RUN apt-get update && \
   apt-get install -y \
   neofetch \
+  chromium \
   ffmpeg \
+  webp \
   wget \
-  chromium \ 
+  mc \
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-RUN npm install -g npm@latest
 RUN npm install 
-RUN npm instal pm2 -g
-RUN npm install ytdl-core@latest
-RUN npm install yt-search@latest
-ENV PM2_PUBLIC_KEY r5nhytflswo1ly3
-ENV PM2_SECRET_KEY cygkc3bz1dww20f
+#RUN npm install @adiwajshing/baileys@3.5.2 
+#RUN npm audit fix
+#RUN npm install -g npm-check-updates
+#RUN ncu --upgrade
+#RUN npm install libwebp
 
-COPY . .
+RUN mkdir /Kenzy-Bot5
+WORKDIR /Kenzy-Bot5
+COPY . /Kenzy-Bot5
+RUN python3 -m pip install -r /Kenzy-Bot5/requirements.txt
+ENV TZ=Asia/Jakarta
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN ls
+
 EXPOSE 5000
 
-CMD ["pm2-runtime", "main.js"]`
+CMD ["npm", "start"]
