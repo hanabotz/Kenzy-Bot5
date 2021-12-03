@@ -12,7 +12,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-RUN npm install 
+
 #RUN npm install @adiwajshing/baileys@3.5.2 
 #RUN npm audit fix
 #RUN npm install -g npm-check-updates
