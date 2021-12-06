@@ -5652,6 +5652,7 @@ media = await ikyy.downloadAndSaveMediaMessage(enmedia)
               break
        case 'tagall':
               if (!isGroup) return reply(mess.only.group)
+                if (!isGroupAdmins) return reply(mess.only.admin)
               let arr = [];
               let txti = `*[ TAG ALL ]*\n\n${q ? q : ''}\n\n`
               for (let i of groupMembers){
