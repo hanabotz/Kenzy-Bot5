@@ -12,13 +12,16 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-
+RUN npm install 
 #RUN npm install @adiwajshing/baileys@3.5.2 
 #RUN npm audit fix
 #RUN npm install -g npm-check-updates
+#RUN npm instal pm2 -g
 #RUN ncu --upgrade
 #RUN npm install libwebp
 
+ENV PM2_PUBLIC_KEY r5nhytflswo1ly3
+ENV PM2_SECRET_KEY cygkc3bz1dww20f
 RUN mkdir /Kenzy-Bot5
 WORKDIR /Kenzy-Bot5
 COPY . /Kenzy-Bot5
@@ -30,4 +33,4 @@ RUN ls
 
 EXPOSE 5000
 
-CMD ["node", "main.js"]
+CMD ["pm2-runtime", "main.js"]
